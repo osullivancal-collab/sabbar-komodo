@@ -1300,3 +1300,41 @@ footer {
   .landscape-card .cover-image,
   .padar-image .cover-image { transition: none; }
 }
+
+/* Private charter requests */
+.rate-calendar-link { margin-top: 24px; }
+.charter-form { gap: 22px; }
+.booking-step { display: flex; gap: 16px; align-items: flex-start; padding-top: 8px; }
+.booking-step > span { padding-top: 3px; color: var(--sea); font-size: .7rem; font-weight: 800; letter-spacing: .1em; }
+.booking-step h3 { margin: 0; font: 400 1.7rem/1.15 Georgia, serif; letter-spacing: -.03em; }
+.booking-step p { margin: 6px 0 0; color: #5f6965; font-size: .8rem; line-height: 1.5; }
+.charter-calendar { padding: 18px; border: 1px solid var(--border); }
+.calendar-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 16px; }
+.calendar-heading strong { font-size: .95rem; }
+.calendar-heading button { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--border); background: transparent; cursor: pointer; }
+.calendar-heading svg { width: 18px; height: 18px; }
+.calendar-weekdays, .calendar-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+.calendar-weekdays span { padding-block: 8px; color: #5f6965; text-align: center; font-size: .65rem; font-weight: 700; }
+.calendar-days button { min-width: 0; min-height: 42px; aspect-ratio: 1; border: 1px solid transparent; background: transparent; color: var(--ink); font-size: .85rem; cursor: pointer; }
+.calendar-days button:hover:not(:disabled) { border-color: var(--sea); }
+.calendar-days button.date-selected { background: var(--sea); color: white; font-weight: 700; }
+.calendar-days button.date-between { background: #dce7df; }
+.calendar-days button:disabled, .calendar-heading button:disabled { color: #9ca29e; opacity: .55; cursor: default; }
+.calendar-days .date-unavailable { text-decoration: line-through; }
+.calendar-heading button:focus-visible, .calendar-days button:focus-visible, .booking-email:focus-visible { outline: 2px solid var(--sea); outline-offset: 2px; }
+.calendar-instruction { min-height: 2.8em; margin: 14px 0 0; font-size: .73rem; color: #5f6965; line-height: 1.5; }
+.booking-availability-note { margin: -6px 0 0; padding-left: 13px; border-left: 2px solid var(--coral); color: #53605b; font-size: .78rem; line-height: 1.6; }
+.charter-estimate { padding: 20px; background: var(--cream); }
+.charter-estimate > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.charter-estimate span { color: #53605b; font-size: .78rem; }
+.charter-estimate strong { font: 400 1.65rem/1.2 Georgia, serif; letter-spacing: -.04em; }
+.charter-estimate p { margin: 12px 0 0; color: #53605b; font-size: .72rem; line-height: 1.65; }
+.booking-receipt { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--cream); font-size: .9rem; }
+.booking-email { overflow-wrap: anywhere; text-decoration: underline; color: var(--sea); font-size: .9rem; }
+@media (max-width: 620px) {
+  .charter-calendar { padding: 12px 6px; }
+  .calendar-days button { min-height: 38px; }
+  .charter-form .form-row { grid-template-columns: 1fr; }
+  .charter-form .form-submit { white-space: normal; height: auto; min-height: 58px; }
+  .calendar-weekdays, .calendar-days { gap: 1px; }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useForm, ValidationError } from "@formspree/react";
+import { CharterBooking } from "@/components/charter-booking";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -13,20 +13,9 @@ import {
   ShipWheel,
   Sun,
   Users,
-  Waves,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-
 const journey = [
   {
     day: "01",
@@ -56,7 +45,6 @@ const inclusions = [
 ];
 
 export default function Home() {
-  const [formState, handleFormSubmit] = useForm("xyeyyzze");
 
   return (
     <main>
@@ -81,7 +69,7 @@ export default function Home() {
             <a href="#journey">Journey</a>
             <a href="#vessel">The vessel</a>
             <a href="#enquire" className="nav-cta">
-              Enquire <ArrowUpRight />
+              Request dates <ArrowUpRight />
             </a>
           </nav>
         </header>
@@ -96,7 +84,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild className="primary-cta">
-              <a href="#enquire">Plan your escape <ArrowUpRight /></a>
+              <a href="#enquire">Plan your charter <ArrowUpRight /></a>
             </Button>
             <a className="text-link light-link" href="#journey">
               Explore the route <ArrowDown />
@@ -299,11 +287,11 @@ export default function Home() {
           </article>
           <article className="rate-card">
             <div>
-              <span>Open trip</span>
-              <strong>Rp 6,000,000</strong>
-              <small>per person · 3 days / 2 nights</small>
+              <span>Your own journey</span>
+              <strong>The whole boat.</strong>
+              <small>Private group · custom route · up to 8 guests</small>
+              <a className="text-link rate-calendar-link" href="#enquire">Choose your dates <ArrowUpRight /></a>
             </div>
-            <Waves />
           </article>
         </div>
         <p className="shell exclusion-note">
@@ -315,12 +303,12 @@ export default function Home() {
       <section className="enquiry-section section-pad" id="enquire">
         <div className="shell enquiry-grid">
           <div className="enquiry-copy">
-            <p className="section-kicker coral">Charter enquiry</p>
-            <h2>Trade the itinerary for a horizon.</h2>
+            <p className="section-kicker coral">Your private charter</p>
+            <h2>Your dates.<br />Your own horizon.</h2>
             <p>
-              Tell us who is travelling, roughly when, and what your group
-              wants more of. We&apos;ll help shape a customisable Sabbar journey
-              from Labuan Bajo.
+              Choose your dates and bring your people. Sabbar is yours for a
+              private charter from Labuan Bajo, with a route shaped around
+              your group. Michael will check availability and send your quote.
             </p>
             <div className="boarding-note">
               <span>Typical departure</span>
@@ -329,89 +317,7 @@ export default function Home() {
             </div>
           </div>
 
-          {formState.succeeded ? (
-            <div className="enquiry-form enquiry-success" role="status">
-              <span className="success-icon"><Check /></span>
-              <p className="section-kicker coral">Enquiry received</p>
-              <h3>Thank you. We&apos;ll be in touch.</h3>
-              <p>
-                Your Sabbar enquiry has been sent. We&apos;ll review your group,
-                dates and trip preferences and reply with the next steps.
-              </p>
-              <Button asChild className="form-submit">
-                <a href="#top">Return to the journey <ArrowUpRight /></a>
-              </Button>
-            </div>
-          ) : (
-          <form className="enquiry-form" onSubmit={handleFormSubmit}>
-            <input type="hidden" name="_subject" value="New Sabbar charter enquiry" />
-            <div className="form-row">
-              <label>
-                <span>Your name</span>
-                <Input name="name" required placeholder="Full name" />
-              </label>
-              <label>
-                <span>Email</span>
-                <Input name="email" type="email" required placeholder="you@email.com" />
-                <ValidationError
-                  field="email"
-                  prefix="Email"
-                  errors={formState.errors}
-                />
-              </label>
-            </div>
-            <div className="form-row">
-              <label>
-                <span>WhatsApp</span>
-                <Input name="whatsapp" type="tel" placeholder="Include country code" />
-              </label>
-              <label>
-                <span>Guests</span>
-                <Input name="guests" type="number" min="1" max="8" required placeholder="2" />
-              </label>
-            </div>
-            <div className="form-row">
-              <label>
-                <span>Trip type</span>
-                <Select name="trip_type" defaultValue="private">
-                  <SelectTrigger className="form-select" aria-label="Trip type">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="private">Private charter · custom route</SelectItem>
-                    <SelectItem value="open">Open trip</SelectItem>
-                    <SelectItem value="unsure">Not sure yet</SelectItem>
-                  </SelectContent>
-                </Select>
-              </label>
-              <label>
-                <span>Preferred dates</span>
-                <Input name="dates" placeholder="e.g. 12–15 September" />
-              </label>
-            </div>
-            <label>
-              <span>Anything we should know?</span>
-              <Textarea
-                name="message"
-                rows={4}
-                required
-                placeholder="Tell us about your group, timing or the kind of trip you want."
-              />
-              <ValidationError
-                field="message"
-                prefix="Message"
-                errors={formState.errors}
-              />
-            </label>
-            <Button type="submit" className="form-submit" disabled={formState.submitting}>
-              {formState.submitting ? "Sending enquiry…" : "Send charter enquiry"}
-              {!formState.submitting && <ArrowUpRight />}
-            </Button>
-            <p className="form-helper">
-              Your details are used only to respond to this charter enquiry.
-            </p>
-          </form>
-          )}
+          <CharterBooking />
         </div>
       </section>
 
