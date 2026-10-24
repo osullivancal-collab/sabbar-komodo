@@ -1338,3 +1338,14 @@ footer {
   .charter-form .form-submit { white-space: normal; height: auto; min-height: 58px; }
   .calendar-weekdays, .calendar-days { gap: 1px; }
 }
+
+/* Open trips lead; private charters remain a clear alternative. */
+.trip-type-picker { display: flex; flex-direction: column; gap: 10px; border: 0; padding: 0; margin: 0 0 8px; min-width: 0; }
+.trip-type-picker legend { margin-bottom: 12px; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.enquiry-form .trip-type-picker label { display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--border); cursor: pointer; }
+.enquiry-form .trip-type-picker label.trip-option-selected { border-color: var(--sea); background: #e6ede6; }
+.enquiry-form .trip-type-picker input { width: 18px; height: 18px; padding: 0; margin: 0; flex: 0 0 18px; accent-color: var(--sea); }
+.enquiry-form .trip-type-picker label > span { display: flex; flex-direction: column; gap: 6px; font-size: .82rem; letter-spacing: 0; text-transform: none; }
+.trip-type-picker small { font-size: .72rem; line-height: 1.5; color: #53605b; font-weight: 400; }
+.open-trip-estimate strong small { display: block; margin-top: 4px; font: 400 .8rem Arial, sans-serif; letter-spacing: 0; }
+.open-trip-estimate .open-trip-total strong { font: 700 .85rem Arial, sans-serif; letter-spacing: 0; }

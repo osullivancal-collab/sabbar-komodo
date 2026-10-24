@@ -69,7 +69,7 @@ export default function Home() {
             <a href="#journey">Journey</a>
             <a href="#vessel">The vessel</a>
             <a href="#enquire" className="nav-cta">
-              Request dates <ArrowUpRight />
+              Enquire <ArrowUpRight />
             </a>
           </nav>
         </header>
@@ -84,7 +84,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Button asChild className="primary-cta">
-              <a href="#enquire">Plan your charter <ArrowUpRight /></a>
+              <a href="#enquire">Find your trip <ArrowUpRight /></a>
             </Button>
             <a className="text-link light-link" href="#journey">
               Explore the route <ArrowDown />
@@ -95,7 +95,7 @@ export default function Home() {
         <div className="hero-facts shell" aria-label="Trip overview">
           <div><span>03</span><small>Days</small></div>
           <div><span>02</span><small>Nights</small></div>
-          <div><span>08</span><small>Private guests</small></div>
+          <div><span>08</span><small>Guests aboard</small></div>
           <div><span>03</span><small>Cabins</small></div>
         </div>
       </section>
@@ -279,19 +279,19 @@ export default function Home() {
         <div className="shell rates-grid">
           <article className="rate-card rate-featured">
             <div>
-              <span>Private charter</span>
+              <span>Open trip</span>
+              <strong>Rp 6,000,000</strong>
+              <small>per person · 3 days / 2 nights</small>
+              <a className="text-link rate-calendar-link" href="#enquire">Find your trip <ArrowUpRight /></a>
+            </div>
+          </article>
+          <article className="rate-card">
+            <div>
+              <span>Private charter · whole boat</span>
               <strong>Rp 20,000,000</strong>
               <small>per day · maximum 8 guests</small>
             </div>
             <ShipWheel />
-          </article>
-          <article className="rate-card">
-            <div>
-              <span>Your own journey</span>
-              <strong>The whole boat.</strong>
-              <small>Private group · custom route · up to 8 guests</small>
-              <a className="text-link rate-calendar-link" href="#enquire">Choose your dates <ArrowUpRight /></a>
-            </div>
           </article>
         </div>
         <p className="shell exclusion-note">
@@ -303,12 +303,12 @@ export default function Home() {
       <section className="enquiry-section section-pad" id="enquire">
         <div className="shell enquiry-grid">
           <div className="enquiry-copy">
-            <p className="section-kicker coral">Your private charter</p>
-            <h2>Your dates.<br />Your own horizon.</h2>
+            <p className="section-kicker coral">Your Sabbar journey</p>
+            <h2>Find your people.<br />Find your horizon.</h2>
             <p>
-              Choose your dates and bring your people. Sabbar is yours for a
-              private charter from Labuan Bajo, with a route shaped around
-              your group. Michael will check availability and send your quote.
+              Join an open trip from Rp 6,000,000 per person for three days
+              and two nights, or bring your own group for a private charter.
+              Michael will help find the right sailing from Labuan Bajo.
             </p>
             <div className="boarding-note">
               <span>Typical departure</span>

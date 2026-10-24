@@ -2,10 +2,13 @@
 
 Next.js website deployed through the existing Vercel project.
 
-## Private charter requests
+## Trip enquiries
 
 `components/charter-booking.tsx` sends whole-boat requests through the existing
 Formspree form `xyeyyzze`, routed to `bookings@sabbarsailing.com` in Formspree.
+Open trips are the default: Rp 6,000,000 per person for 3 days / 2 nights, with
+preferred dates sent to Michael to match a scheduled departure. The private
+charter option retains the whole-boat date calendar and daily estimate.
 No site database or payment service is used. Requests are not reservations.
 Michael must check availability and confirm the quote in writing.
 
