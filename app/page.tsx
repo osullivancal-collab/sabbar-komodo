@@ -280,7 +280,7 @@ export default function Home() {
           <article className="rate-card rate-featured">
             <div>
               <span>Open trip</span>
-              <strong>Rp 6,000,000</strong>
+              <strong>Rp 5,500,000</strong>
               <small>per person · 3 days / 2 nights</small>
               <a className="text-link rate-calendar-link" href="#enquire">Find your trip <ArrowUpRight /></a>
             </div>
@@ -306,7 +306,7 @@ export default function Home() {
             <p className="section-kicker coral">Your Sabbar journey</p>
             <h2>Find your people.<br />Find your horizon.</h2>
             <p>
-              Join an open trip from Rp 6,000,000 per person for three days
+              Join an open trip from Rp 5,500,000 per person for three days
               and two nights, or bring your own group for a private charter.
               Michael will help find the right sailing from Labuan Bajo.
             </p>

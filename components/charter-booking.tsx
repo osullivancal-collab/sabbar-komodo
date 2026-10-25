@@ -26,7 +26,7 @@ export function CharterBooking() {
   const [guests, setGuests] = useState('');
   const isPrivate = tripType === 'private';
   const guestCount = Number(guests);
-  const openEstimate = Number.isInteger(guestCount) && guestCount >= 1 && guestCount <= MAX_GUESTS ? guestCount * 6_000_000 : 0;
+  const openEstimate = Number.isInteger(guestCount) && guestCount >= 1 && guestCount <= MAX_GUESTS ? guestCount * 5_500_000 : 0;
   const [receipt, setReceipt] = useState<{dates: string; guests: string; private: boolean} | null>(null);
   const lastDate = `${Number(today.slice(0, 4)) + 2}${today.slice(4)}`;
   const days = tripDays(start, end);
@@ -92,7 +92,7 @@ export function CharterBooking() {
         <legend>Choose your trip</legend>
         <label className={isPrivate ? '' : 'trip-option-selected'}>
           <input type="radio" name="Trip type" value="Open trip · per person" checked={!isPrivate} onChange={() => { setTripType('open'); setError(''); }} />
-          <span><strong>Open trip · per person</strong><small>Rp 6,000,000 each · 3 days / 2 nights</small></span>
+          <span><strong>Open trip · per person</strong><small>Rp 5,500,000 each · 3 days / 2 nights</small></span>
         </label>
         <label className={isPrivate ? 'trip-option-selected' : ''}>
           <input type="radio" name="Trip type" value="Private charter · whole boat" checked={isPrivate} onChange={() => { setTripType('private'); setError(''); }} />
@@ -138,10 +138,10 @@ export function CharterBooking() {
       {blocked && <p role="alert">Your selection includes unavailable dates. Please choose another range.</p>}
       </> : <>
         <input type="hidden" name="Duration" value="3 days / 2 nights" />
-        <input type="hidden" name="Estimate" value={openEstimate ? `${rupiah(openEstimate)} for ${guests} guests · Rp 6,000,000 per person; exclusions apply` : 'Rp 6,000,000 per person; exclusions apply'} />
+        <input type="hidden" name="Estimate" value={openEstimate ? `${rupiah(openEstimate)} for ${guests} guests · Rp 5,500,000 per person; exclusions apply` : 'Rp 5,500,000 per person; exclusions apply'} />
         <div className="booking-step"><span>01</span><div><h3>Join an open trip</h3><p>Book individual places and share the journey with other travellers.</p></div></div>
         <div className="charter-estimate open-trip-estimate" aria-live="polite">
-          <div><span>3 days · 2 nights</span><strong>Rp 6,000,000 <small>per person</small></strong></div>
+          <div><span>3 days · 2 nights</span><strong>Rp 5,500,000 <small>per person</small></strong></div>
           {openEstimate > 0 && <p className="open-trip-total"><strong>{rupiah(openEstimate)}</strong> total for {guests} {guestCount === 1 ? 'guest' : 'guests'}.</p>}
           <p>Park fees, flights, hotels, alcohol, travel insurance and gratuities are extra.</p>
         </div>
